@@ -10,19 +10,42 @@ main{
     display: grid;
     place-items: center;
 }
+main > h1 {
+    margin: 30px 0;
+    background-image: linear-gradient(9deg, #800080, #52caff 100px);
+    color: transparent;
+    background-clip: text;
+    animation: colorChng .7s linear infinite;
+}
+@keyframes colorChng {
+0%{
+    background-image: linear-gradient(0deg, #800080, #52caff 100px);
+}  
+50%{
+    background-image: linear-gradient(360deg, #52caff, #800080 100px);
+}  
+100%{
+    background-image: linear-gradient(0deg, #800080, #52caff 100px);
+}  
+}
 .editor{
     width: 500px;
-    height: 700px;
-    border: 1px solid #ddd;
+    height: 70vh;
+    /* border: 1px solid #ddd; */
     position: relative;
+    margin-bottom: 100px;
 }
 .editor .navbar{
+    display: flex;
+    align-items: center;
     width: 100%;
     background-color: purple;
     position: absolute;
     top: 0;
     left: 0;
     height: 100px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 .editor .navbar ul{
     display: flex;
