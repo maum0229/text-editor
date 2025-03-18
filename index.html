@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Text Editor - &copy; MAUM</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Include FontAwesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div class="editor">
+        <div class="navbar">
+          <ul>
+            <!-- Formatting Buttons -->
+            <li>
+              <button id="boldBtn"><i class="fas fa-bold"></i></button>
+            </li>
+            <li>
+              <button id="italicBtn"><i class="fas fa-italic"></i></button>
+            </li>
+            <li>
+              <button id="underlineBtn">
+                <i class="fas fa-underline"></i>
+              </button>
+            </li>
+            <li>
+              <button id="strikeBtn">
+                <i class="fas fa-strikethrough"></i>
+              </button>
+            </li>
+            <li>
+              <button id="superscriptBtn">
+                <i class="fas fa-superscript"></i>
+              </button>
+            </li>
+            <li>
+              <button id="subscriptBtn">
+                <i class="fas fa-subscript"></i>
+              </button>
+            </li>
+            <!-- Undo and Redo Buttons -->
+            <li>
+              <button id="undoBtn"><i class="fas fa-undo"></i></button>
+            </li>
+            <li>
+              <button id="redoBtn"><i class="fas fa-redo"></i></button>
+            </li>
+
+            <!-- Heading Buttons -->
+            <li>
+              <button id="h1Btn"><i class="fas fa-heading"></i>1</button>
+            </li>
+            <li>
+              <button id="h2Btn"><i class="fas fa-heading"></i>2</button>
+            </li>
+            <li>
+              <button id="h3Btn"><i class="fas fa-heading"></i>3</button>
+            </li>
+            <li>
+              <button id="h4Btn"><i class="fas fa-heading"></i>4</button>
+            </li>
+            <li>
+              <button id="h5Btn"><i class="fas fa-heading"></i>5</button>
+            </li>
+            <li>
+              <button id="h6Btn"><i class="fas fa-heading"></i>6</button>
+            </li>
+
+            <!-- List Buttons -->
+            <li>
+              <button id="orderedListBtn">
+                <i class="fas fa-list-ol"></i>
+              </button>
+            </li>
+            <li>
+              <button id="unorderedListBtn">
+                <i class="fas fa-list-ul"></i>
+              </button>
+            </li>
+
+            <!-- Indentation Buttons -->
+            <li>
+              <button id="indentBtn"><i class="fas fa-indent"></i></button>
+            </li>
+            <li>
+              <button id="outdentBtn"><i class="fas fa-outdent"></i></button>
+            </li>
+
+            <!-- Text Alignment Buttons -->
+            <li>
+              <button id="alignLeftBtn">
+                <i class="fas fa-align-left"></i>
+              </button>
+            </li>
+            <li>
+              <button id="alignCenterBtn">
+                <i class="fas fa-align-center"></i>
+              </button>
+            </li>
+            <li>
+              <button id="alignRightBtn">
+                <i class="fas fa-align-right"></i>
+              </button>
+            </li>
+
+            <!-- Add/Remove Link Button -->
+            <li>
+              <button id="linkBtn"><i class="fas fa-link"></i></button>
+            </li>
+
+            <!-- Image Upload Button -->
+            <li class="insertImage">
+              <button id="insertImageBtn">
+                  <i class="fas fa-image"></i>
+                </button>
+                <div class="dropdownBtn">
+                    <i class="fas fa-caret-down"></i>
+  
+                    <div class="dropdownContent">
+                    <div>
+                       <span>W:</span><input type="text" placeholder="width" value="200px">
+                    </div>
+                    <div>
+                      <span>H:</span><input type="text" placeholder="height" value="auto">
+                    </div>
+                    </div>
+                  </div>
+
+              </div>
+            </li>
+
+            <!-- Hidden File Input for Image Upload -->
+            <input
+              type="file"
+              id="imageUploadInput"
+              accept="image/*"
+              style="display: none"
+            />
+
+            <!-- Font Size Adjustment -->
+            <!-- <li>
+                    <select id="fontSizeSelect">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </li> -->
+
+            <!-- Text Color and Background Color -->
+            <li><input type="color" id="textColor" title="Text Color" /></li>
+            <li>
+              <input type="color" id="bgColor" title="Background Color" />
+            </li>
+
+            <!-- Remove Formatting Button -->
+            <li>
+              <button id="clearFormattingBtn">
+                <i class="fas fa-eraser"></i>
+              </button>
+            </li>
+          </ul>
+
+          <!-- Textarea -->
+          <div class="textarea" contenteditable>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem,
+            cupiditate.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

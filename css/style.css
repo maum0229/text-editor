@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: all .3s ease;
+}
+main{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.editor{
+    width: 500px;
+    height: 700px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.editor .navbar{
+    width: 100%;
+    background-color: purple;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+}
+.editor .navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.editor .navbar ul li button{
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    margin: 5px;
+    background-color: #fff;
+    border: none;
+}
+.editor .textarea{
+    height: calc(100% - 100px);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: aliceblue;
+    padding: 10px;
+}
+/* Style for the inserted images to make them resizable and draggable */
+.editor .navbar ul li.insertImage{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    height: 25px;
+    padding: 0 5px;
+    border-radius: 2px;
+}
+.editor .navbar ul li.insertImage button{
+    margin: 0;
+}
+.editor .navbar ul li.insertImage .dropdownBtn{
+    position: relative;
+    cursor: pointer;
+}
+.editor .navbar ul li.insertImage .dropdownContent{
+    position: absolute;
+    top: 124%;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    display: none;
+}
+.editor .navbar ul li.insertImage .dropdownContent.show{
+    display: block;
+}
+
+
+.editor .navbar ul li.insertImage .dropdownContent div{
+    display: flex;
+}
+.editor .navbar ul li.insertImage .dropdownContent div span{
+    width: 20px;
+}
+.editor .navbar ul li.insertImage .dropdownContent input{
+    width: 100px;
+}
+.resizable {
+    display: block;    /* Make the image block-level to not disturb text */
+    max-width: 100%;   /* Ensure the image fits within the editor */
+    cursor: move;     /* Indicates that the image can be moved */
+    resize: both;      /* Enable resizing in both horizontal and vertical directions */
+    overflow: hidden;  /* Hide overflow */
+    min-width: 50px;   /* Minimum width */
+    min-height: 50px;  /* Minimum height */
+    border: 1px solid #ccc; /* Optional: Adds a border around the image */
+    position: absolute;  /* Allow absolute positioning within the editor */
+    user-select: none;   /* Disable text selection while dragging */
+}
+
+.resizable:focus {
+    outline: none;
+    border: 2px dashed #4a90e2; /* Optional: Highlight image with a dashed border when focused */
+}
+
+/* Optional: Add styling for the editor to allow the images to float above text */
+.textarea {
+    position: relative; /* Make sure the contenteditable is positioned relative */
+    min-height: 300px; /* Set a minimum height for the contenteditable area */
+    border: 1px solid #ccc; /* Optional border for the contenteditable area */
+    padding: 20px;
+    background: #f4f4f4;
+    overflow: hidden;  /* Prevent content from overflowing */
+}
